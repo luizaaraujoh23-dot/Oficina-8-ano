@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#E23B4E">
+  <meta name="description"
+    content="Oficina 8º Ano: A Linguagem Secreta dos GSF (Geração Sem Filtro): fonética, gírias e identidade jovem. Um site para explorar no seu ritmo.">
+  <title>Oficina 8º Ano · A Linguagem Secreta dos GSF</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #E23B4E;
+      --red-d: #B92438;
+      --pink: #F59AB8;
+      --pink-l: #FFE3EC;
+      --cream: #FFF8F3;
+      --paper: #fff;
+      --ink: #2A1A1F;
+      --muted: #6B5A5F;
+      --yellow: #FFC83D;
+      --yellow-l: #FFF3C9;
+      --green: #2E9E6B;
+      --green-l: #DDF4E8;
+      --amber: #E8920F;
+      --amber-l: #FFEBCB;
+      --bad: #C8283C;
+      --bad-l: #FFE0E4;
+      --line: #F0D6DB;
+      --r: 18px;
+      --shadow: 0 6px 0 rgba(185, 36, 56, .14), 0 10px 24px rgba(42, 26, 31, .08);
+      --head: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+      --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--cream);
+      background-image: radial-gradient(var(--pink-l) 1.5px, transparent 1.5px);
+      background-size: 26px 26px;
+      -webkit-text-size-adjust: 100%
+    }
+
+    img,
+    svg {
+      max-width: 100%
+    }
+
+    a {
+      color: var(--red-d)
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--head);
+      line-height: 1.15;
+      margin: 0 0 .5em;
+      color: var(--ink)
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem)
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 3.4vw, 1.8rem);
+      margin-top: 1.8em
+    }
+
+    h4 {
+      font-size: 1.15rem
+    }
+
+    p {
+      margin: 0 0 1em
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: var(--ink);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      z-index: 200
+    }
+
+    .skip:focus {
+      left: 8px
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--ink);
+      outline-offset: 2px
+    }
+
+    /* progress + nav */
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      width: 0;
+      background: linear-gradient(90deg, var(--yellow), var(--pink), var(--red));
+      z-index: 120;
+      transition: width .1s
+    }
+
+    .nav {
+      position: fixed;
+      top: 5px;
+      left: 0;
+      right: 0;
+      z-index: 110;
+      background: rgba(255, 248, 243, .94);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--line)
+    }
+
+    .nav-in {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 14px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--head);
+      font-weight: 800;
+      line-height: 1;
+      flex: none
+    }
+
+    .brand svg {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px
+    }
+
+    .brand small {
+      display: block;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--red)
+    }
+
+    .brand span {
+      font-size: .92rem
+    }
+
+    .menu {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      flex: 1;
+      scrollbar-width: none;
+      padding: 2px
+    }
+
+    .menu::-webkit-scrollbar {
+      display: none
+    }
+
+    .menu a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: .85rem;
+      padding: 6px 11px;
+      border-radius: 99px;
+      border: 2px solid transparent
+    }
+
+    .menu a:hover {
+      background: var(--pink-l)
+    }
+
+    .menu a.on {
+      background: var(--red);
+      color: #fff
+    }
+
+    .menu a.done::after {
+      content: " ★";
+      color: var(--yellow)
+    }
+
+    .stars-btn {
+      flex: none;
+      border: 2px solid var(--ink);
+      background: var(--yellow);
+      font: 800 .9rem var(--head);
+      border-radius: 99px;
+      padding: 4px 12px;
+      cursor: pointer;
+      color: var(--ink)
+    }
+
+    @media(max-width:620px) {
+      .brand span {
+        display: none
+      }
+
+      .brand small {
+        font-size: .58rem
+      }
+    }
+
+    /* hero */
+    .hero {
+      padding: 104px 0 40px;
+      text-align: center
+    }
+
+    .hero .logo {
+      width: 128px;
+      height: 128px;
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      margin-bottom: 10px
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 7vw, 3.8rem);
+      color: var(--red-d);
+      margin-bottom: .2em
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      display: block;
+      color: var(--ink);
+      font-size: .62em
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font: 800 .85rem var(--head);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 99px
+    }
+
+    .sub {
+      font: 700 clamp(1.1rem, 3vw, 1.5rem) var(--head);
+      margin: .5em 0 1.2em
+    }
+
+    .chat {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      text-align: left;
+      overflow: hidden
+    }
+
+    .chat-top {
+      background: var(--ink);
+      color: #fff;
+      font: 700 .8rem var(--head);
+      padding: 6px 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .chat-body {
+      padding: 14px;
+      display: grid;
+      gap: 10px
+    }
+
+    .bubble {
+      padding: 10px 14px;
+      border-radius: 16px;
+      max-width: 88%;
+      font-size: .97rem
+    }
+
+    .bubble b {
+      display: block;
+      font: 800 .72rem var(--head);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      opacity: .7
+    }
+
+    .b-me {
+      background: var(--pink-l);
+      justify-self: end;
+      border-bottom-right-radius: 4px
+    }
+
+    .b-ia {
+      background: var(--yellow-l);
+      border-bottom-left-radius: 4px
+    }
+
+    .hero-quote {
+      font: 700 1.05rem var(--head);
+      color: var(--muted);
+      margin: 16px auto 0;
+      max-width: 520px
+    }
+
+    /* sections */
+    section {
+      position: relative
+    }
+
+    .intro {
+      padding: 44px 0
+    }
+
+    .cards5 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin: 22px 0
+    }
+
+    .mcard {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      transition: transform .15s;
+      position: relative
+    }
+
+    .mcard:hover {
+      transform: translateY(-4px) rotate(-1deg)
+    }
+
+    .mcard .n {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font: 800 1.2rem var(--head);
+      margin-bottom: 6px
+    }
+
+    .mcard h4 {
+      margin: 0 0 4px
+    }
+
+    .mcard p {
+      font-size: .88rem;
+      margin: 0;
+      color: var(--muted)
+    }
+
+    .mcard .st {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      font-size: 1.3rem;
+      color: #d9c6ca
+    }
+
+    .mcard.done .st {
+      color: var(--yellow);
+      text-shadow: 0 0 0 var(--ink);
+      -webkit-text-stroke: 1px var(--ink)
+    }
+
+    .rules {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0
+    }
+
+    .rule {
+      background: var(--paper);
+      border-left: 8px solid var(--red);
+      border-radius: 12px;
+      padding: 12px 16px
+    }
+
+    .lock {
+      background: var(--green-l);
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-weight: 700
+    }
+
+    .btn {
+      display: inline-block;
+      font: 800 1.05rem var(--head);
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      border: 3px solid var(--ink);
+      border-radius: 99px;
+      padding: 10px 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 var(--ink);
+      transition: transform .1s, box-shadow .1s
+    }
+
+    .btn:hover {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 var(--ink)
+    }
+
+    .btn.alt {
+      background: var(--yellow);
+      color: var(--ink)
+    }
+
+    .btn.sm {
+      font-size: .9rem;
+      padding: 6px 16px
+    }
+
+    .btn:disabled {
+      opacity: .5;
+      cursor: default
+    }
+
+    .center {
+      text-align: center
+    }
+
+    .chapter {
+      padding: 58px 0 40px;
+      border-top: 6px dotted var(--pink)
+    }
+
+    .chapter:nth-of-type(even) {
+      background: rgba(255, 227, 236, .45)
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--yellow);
+      font: 800 .95rem var(--head);
+      padding: 3px 14px;
+      border-radius: 99px;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .lead {
+      font: 700 1.25rem var(--head);
+      color: var(--red-d)
+    }
+
+    .learn {
+      background: var(--paper);
+      border: 2px dashed var(--red);
+      border-radius: 14px;
+      padding: 12px 16px
+    }
+
+    .chbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 12px 0 4px
+    }
+
+    .chbar span {
+      flex: 1;
+      height: 12px;
+      background: #f0dde1;
+      border-radius: 99px;
+      overflow: hidden;
+      border: 2px solid var(--ink)
+    }
+
+    .chbar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      transition: width .4s
+    }
+
+    .chbar em {
+      font: 800 .9rem var(--head);
+      font-style: normal
+    }
+
+    .fact {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      background: var(--yellow-l);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 14px 18px;
+      margin: 20px 0
+    }
+
+    .fact .big {
+      font: 800 2.4rem var(--head);
+      color: var(--red-d);
+      flex: none
+    }
+
+    .fact p {
+      margin: 0
+    }
+
+    .fact small {
+      color: var(--muted)
+    }
+
+    .point {
+      background: var(--paper);
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin: 0 0 12px;
+      border: 2px solid var(--line)
+    }
+
+    .point b:first-child {
+      color: var(--red-d)
+    }
+
+    .warn {
+      background: var(--amber-l);
+      border-radius: 12px;
+      padding: 10px 16px;
+      border-left: 8px solid var(--amber);
+      margin: 14px 0
+    }
+
+    .note {
+      background: var(--pink-l);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin: 14px 0
+    }
+
+    .mark {
+      background: linear-gradient(transparent 55%, var(--yellow) 55%);
+      padding: 0 2px
+    }
+
+    /* flip cards */
+    .flips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin: 16px 0
+    }
+
+    .flip {
+      perspective: 900px;
+      border: 0;
+      background: none;
+      padding: 0;
+      min-height: 200px;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+      text-align: left
+    }
+
+    .flip>span {
+      display: block;
+      position: relative;
+      height: 100%;
+      min-height: 200px;
+      transform-style: preserve-3d;
+      transition: transform .55s
+    }
+
+    .flip[aria-pressed=true]>span {
+      transform: rotateY(180deg)
+    }
+
+    .flip .f,
+    .flip .b {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      overflow: auto
+    }
+
+    .flip .f {
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center
+    }
+
+    .flip .f b {
+      font: 800 1.5rem var(--head);
+      color: var(--red-d)
+    }
+
+    .flip .f small {
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    .flip .b {
+      background: var(--yellow-l);
+      transform: rotateY(180deg);
+      font-size: .93rem
+    }
+
+    .flip .tag {
+      display: inline-block;
+      background: var(--ink);
+      color: #fff;
+      font: 800 .72rem var(--head);
+      padding: 1px 9px;
+      border-radius: 99px;
+      margin-bottom: 6px
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .flip>span {
+        transition: none
+      }
+
+      html {
+        scroll-behavior: auto
+      }
+    }
+
+    /* compare */
+    .cmp {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 16px 0
+    }
+
+    @media(max-width:600px) {
+      .cmp {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .cmp>div {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 14px 16px;
+      box-shadow: var(--shadow)
+    }
+
+    .cmp h4 {
+      color: var(--red-d)
+    }
+
+    .cmp ul {
+      margin: 0;
+      padding-left: 20px
+    }
+
+    /* steps */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: stretch;
+      margin: 16px 0
+    }
+
+    .step {
+      flex: 1 1 150px;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 12px;
+      box-shadow: var(--shadow)
+    }
+
+    .step b {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font: 800 1rem var(--head);
+      margin-bottom: 4px
+    }
+
+    .step h4 {
+      margin: 0 0 4px
+    }
+
+    .step p {
+      font-size: .9rem;
+      margin: 0
+    }
+
+    .arrow {
+      align-self: center;
+      font: 800 1.6rem var(--head);
+      color: var(--red)
+    }
+
+    @media(max-width:700px) {
+      .arrow {
+        display: none
+      }
+    }
+
+    /* demo */
+    .demo {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: var(--shadow)
+    }
+
+    .typed {
+      font: 800 clamp(1.3rem, 4.5vw, 2rem) var(--head);
+      min-height: 2.6em;
+      color: var(--red-d)
+    }
+
+    .demo-note {
+      min-height: 3em;
+      background: var(--pink-l);
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: .95rem
+    }
+
+    /* activity */
+    .activity {
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+      padding: 18px 18px 20px;
+      margin: 28px 0
+    }
+
+    .activity .tagact {
+      display: inline-block;
+      background: var(--yellow);
+      border: 2px solid var(--ink);
+      font: 800 .78rem var(--head);
+      padding: 2px 12px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .activity h3 {
+      margin-top: .4em
+    }
+
+    .q-count {
+      font: 800 .9rem var(--head);
+      color: var(--muted)
+    }
+
+    .q-text {
+      font: 700 1.2rem var(--head);
+      margin: 6px 0 12px
+    }
+
+    .opts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px
+    }
+
+    .opt {
+      font: 800 1rem var(--body);
+      background: var(--cream);
+      border: 3px solid var(--ink);
+      border-radius: 14px;
+      padding: 10px 12px;
+      cursor: pointer;
+      color: var(--ink);
+      text-align: left;
+      box-shadow: 0 3px 0 var(--ink)
+    }
+
+    .opt:hover:not(:disabled) {
+      background: var(--pink-l)
+    }
+
+    .opt:disabled {
+      cursor: default
+    }
+
+    .opt.ok {
+      background: var(--green-l);
+      border-color: var(--green);
+      box-shadow: 0 3px 0 var(--green)
+    }
+
+    .opt.no {
+      background: var(--bad-l);
+      border-color: var(--bad);
+      box-shadow: 0 3px 0 var(--bad)
+    }
+
+    .fb {
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600
+    }
+
+    .fb.ok {
+      background: var(--green-l)
+    }
+
+    .fb.no {
+      background: var(--bad-l)
+    }
+
+    .fb b {
+      display: block
+    }
+
+    .act-end {
+      text-align: center;
+      padding: 8px 0
+    }
+
+    .act-end .score {
+      font: 800 1.4rem var(--head);
+      color: var(--green)
+    }
+
+    .reveals {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px
+    }
+
+    .rev {
+      border: 3px dashed var(--ink);
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 12px;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      min-height: 110px
+    }
+
+    .rev b {
+      font: 800 1.2rem var(--head)
+    }
+
+    .rev .ans {
+      display: none;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 2px solid var(--line);
+      font-size: .93rem
+    }
+
+    .rev[aria-pressed=true] {
+      background: var(--green-l);
+      border-style: solid;
+      border-color: var(--green)
+    }
+
+    .rev[aria-pressed=true] .ans {
+      display: block
+    }
+
+    .rev .hintx {
+      font-size: .85rem;
+      color: var(--muted)
+    }
+
+    .rev[aria-pressed=true] .hintx {
+      display: none
+    }
+
+    .starmsg {
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      padding: 12px 18px;
+      font: 800 1.1rem var(--head);
+      margin: 18px 0;
+      text-align: center;
+      animation: pop .5s
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(.8)
+      }
+
+      60% {
+        transform: scale(1.06)
+      }
+
+      100% {
+        transform: scale(1)
+      }
+    }
+
+    .bridge {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--red);
+      color: #fff;
+      font: 800 1.15rem var(--head);
+      padding: 16px 20px;
+      border: 3px solid var(--ink);
+      border-radius: var(--r);
+      box-shadow: 0 5px 0 var(--ink);
+      margin-top: 34px
+    }
+
+    .bridge:hover {
+      transform: translateY(2px);
+      box-shadow: 0 3px 0 var(--ink)
+    }
+
+    .bridge i {
+      font-style: normal;
+      float: right;
+      margin-left: 10px
+    }
+
+    /* inputs */
+    label.lb {
+      display: block;
+      font: 800 1rem var(--head);
+      margin: 12px 0 4px
+    }
+
+    textarea,
+    input[type=text] {
+      width: 100%;
+      font: inherit;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      padding: 10px 12px;
+      background: var(--cream);
+      color: var(--ink)
+    }
+
+    textarea {
+      min-height: 76px;
+      resize: vertical
+    }
+
+    .dict {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px
+    }
+
+    @media(max-width:560px) {
+      .dict {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .cardprev {
+      margin-top: 14px;
+      background: var(--yellow-l);
+      border: 3px dashed var(--red);
+      border-radius: var(--r);
+      padding: 14px 16px
+    }
+
+    /* closing */
+    .close {
+      padding: 56px 0 20px;
+      border-top: 6px dotted var(--pink)
+    }
+
+    .carou {
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--r);
+      padding: 22px;
+      text-align: center;
+      box-shadow: var(--shadow)
+    }
+
+    .carou .who {
+      font: 800 .9rem var(--head);
+      color: var(--yellow);
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .carou p {
+      font: 700 1.35rem var(--head);
+      margin: 8px 0 14px;
+      min-height: 3.6em
+    }
+
+    .carou button {
+      background: var(--yellow);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font: 800 1.3rem var(--head);
+      cursor: pointer;
+      margin: 0 6px
+    }
+
+    .checks {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .checks li {
+      background: var(--paper);
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 10px
+    }
+
+    .checks label {
+      display: flex;
+      gap: 12px;
+      cursor: pointer;
+      align-items: flex-start
+    }
+
+    .checks input {
+      width: 22px;
+      height: 22px;
+      margin-top: 4px;
+      accent-color: var(--red);
+      flex: none
+    }
+
+    .checks input:checked+span {
+      text-decoration: line-through;
+      color: var(--muted)
+    }
+
+    table.rev9 {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: .95rem
+    }
+
+    .rev9 th,
+    .rev9 td {
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--line);
+      text-align: left;
+      vertical-align: top
+    }
+
+    .rev9 th {
+      background: var(--red);
+      color: #fff;
+      font-family: var(--head)
+    }
+
+    .pocket {
+      background: var(--yellow-l);
+      border: 4px solid var(--ink);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      max-width: 560px;
+      margin: 0 auto
+    }
+
+    .pocket .top {
+      font: 800 .78rem var(--head);
+      letter-spacing: .1em;
+      color: var(--red-d)
+    }
+
+    .pocket h3 {
+      margin: .1em 0 .5em
+    }
+
+    .pocket ol {
+      margin: 0;
+      padding-left: 22px;
+      font-weight: 700;
+      font-size: .95rem
+    }
+
+    .pocket li {
+      margin-bottom: 4px
+    }
+
+    .pocket .tools {
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap
+    }
+
+    details {
+      background: var(--paper);
+      border: 2px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin-bottom: 10px
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-family: var(--head);
+      font-size: 1.05rem
+    }
+
+    details p {
+      margin: 8px 0 0
+    }
+
+    .refs h5 {
+      margin: 14px 0 4px;
+      font: 800 1rem var(--head);
+      color: var(--red-d)
+    }
+
+    .refs ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: .93rem
+    }
+
+    .endq {
+      text-align: center;
+      font: 700 1.2rem var(--head);
+      padding: 30px 0 10px
+    }
+
+    footer {
+      background: var(--ink);
+      color: #fff;
+      padding: 28px 0 36px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: .92rem
+    }
+
+    footer svg {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px
+    }
+
+    footer button {
+      background: none;
+      border: 2px solid #fff;
+      color: #fff;
+      border-radius: 99px;
+      padding: 6px 16px;
+      font: 700 .9rem var(--body);
+      cursor: pointer;
+      margin-top: 8px
+    }
+
+    footer button:hover {
+      background: var(--red)
+    }
+
+    /* modal */
+    dialog {
+      border: 4px solid var(--ink);
+      border-radius: 24px;
+      padding: 24px;
+      max-width: 420px;
+      width: calc(100% - 32px);
+      text-align: center;
+      background: var(--cream);
+      color: var(--ink);
+      box-shadow: 0 14px 0 rgba(0, 0, 0, .2)
+    }
+
+    dialog::backdrop {
+      background: rgba(42, 26, 31, .65)
+    }
+
+    dialog h2 {
+      font-size: 1.9rem;
+      margin-bottom: .2em
+    }
+
+    .hat {
+      width: 240px;
+      margin: 0 auto
+    }
+
+    .conf {
+      position: fixed;
+      top: -20px;
+      width: 10px;
+      height: 14px;
+      z-index: 300;
+      pointer-events: none;
+      animation: fall linear forwards
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg)
+      }
+    }
+
+    @media print {
+
+      body.printing>*:not(main),
+      body.printing .nav,
+      body.printing #progress,
+      body.printing footer {
+        display: none !important
+      }
+
+      body.printing main>*:not(#cartaoWrap) {
+        display: none !important
+      }
+
+      body.printing .pocket .tools {
+        display: none
+      }
+
+      body {
+        background: #fff
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="logo" viewBox="0 0 100 100">
+        <image
+          href="data:image/jpeg;base64,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"
+          width="100" height="100" preserveAspectRatio="xMidYMid slice" />
+      </symbol>
+      <symbol id="star" viewBox="0 0 24 24">
+        <path d="M12 1.8l3 6.6 7.2.8-5.4 4.8 1.5 7.1L12 17.5l-6.3 3.6 1.5-7.1L1.8 9.2 9 8.4z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-in">
+      <a class="brand" href="#inicio"><svg aria-hidden="true">
+          <use href="#logo" />
+        </svg>
+        <div><small>Oficina</small><span>8º Ano</span></div>
+      </a>
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="#inicio" data-s="inicio">Início</a>
+        <a href="#etapa1" data-s="etapa1" data-m="1">Julia</a>
+        <a href="#etapa2" data-s="etapa2" data-m="2">Luiza</a>
+        <a href="#etapa3" data-s="etapa3" data-m="3">Julia</a>
+        <a href="#etapa4" data-s="etapa4" data-m="4">Luiza</a>
+        <a href="#etapa5" data-s="etapa5" data-m="5">Julia</a>
+        <a href="#fechamento" data-s="fechamento">Fechamento</a>
+        <a href="#cartao" data-s="cartao">Cartão</a>
+      </nav>
+      <button class="stars-btn" id="starCount" aria-label="Ver meu chapéu de estrelas">0/5 ★</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ================= INÍCIO ================= -->
+    <section class="hero" id="inicio">
+      <div class="wrap">
+        <svg class="logo" role="img" aria-label="Logo da Oficina 8º Ano">
+          <use href="#logo" />
+        </svg>
+        <h1>Oficina<br>8º Ano</h1>
+        <span class="eyebrow">Com Julia e Luiza</span>
+        <p class="sub" style="margin-top:14px">A Linguagem Secreta dos GSF<br><span style="color:var(--red-d)">Fonética,
+            gírias e identidade jovem</span></p>
+        <div class="chat" role="img"
+          aria-label="Conversa ilustrativa: Aluna pergunta por que se diz tá em vez de está. A professora explica que a fala economiza sons.">
+          <div class="chat-top">conversa na sala de aula</div>
+          <div class="chat-body">
+            <div class="bubble b-me"><b>Aluna</b>Prô, por que a gente fala “tá” e não “está”? Tô falando errado?</div>
+            <div class="bubble b-ia"><b>Professora</b>Nada disso! A fala economiza sons, e cada grupo cria o seu jeito.
+              O segredo é saber quando usar cada um.</div>
+          </div>
+        </div>
+        <p class="hero-quote">A língua é como uma roupa: a gente escolhe a que combina com a ocasião.</p>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="wrap">
+        <h2>Conheça Julia e Luiza</h2>
+        <p>Julia e Luiza vão te guiar pelas cinco partes da oficina. Complete as atividades de cada etapa e ganhe uma
+          <b>estrela do chapéu</b>. Junta as 5 e o chapéu fica completo, visse?</p>
+        <div class="cards5">
+          <a class="mcard" href="#etapa1" data-card="1"><span class="st">★</span><span class="n">1</span>
+            <h4>Língua e sociedade</h4>
+            <p>Sociolinguística e variação linguística.</p>
+          </a>
+          <a class="mcard" href="#etapa2" data-card="2"><span class="st">★</span><span class="n">2</span>
+            <h4>Respeito ao falar</h4>
+            <p>Preconceito linguístico.</p>
+          </a>
+          <a class="mcard" href="#etapa3" data-card="3"><span class="st">★</span><span class="n">3</span>
+            <h4>Gírias e jargões</h4>
+            <p>O que são e para que servem.</p>
+          </a>
+          <a class="mcard" href="#etapa4" data-card="4"><span class="st">★</span><span class="n">4</span>
+            <h4>A turma GSF</h4>
+            <p>Ritmo das gírias e a Geração Sem Filtro.</p>
+          </a>
+          <a class="mcard" href="#etapa5" data-card="5"><span class="st">★</span><span class="n">5</span>
+            <h4>Som e identidade</h4>
+            <p>Fonética e identidade jovem.</p>
+          </a>
+        </div>
+        <h3 style="margin-top:1em">Antes de começar, dois combinados</h3>
+        <div class="rules">
+          <div class="rule"><b>Gíria não é ofensa.</b> Vamos estudar o jeito de falar dos jovens sem xingar, humilhar ou
+            debochar de ninguém, nem de sotaques e nem de grupos.</div>
+          <div class="rule"><b>Todo jeito de falar merece respeito.</b> Aqui ninguém “fala errado”: a gente aprende a
+            escolher a fala certa para cada situação.</div>
+        </div>
+        <p class="lock">🔒 Este site não tem login nem cadastro. Tudo o que você digita e as estrelas que ganha ficam
+          salvos só neste aparelho.</p>
+        <p class="center"><a class="btn" href="#etapa1">Começar a jornada ★</a></p>
+      </div>
+    </section>
+
+    <!-- ================= ETAPA 1 ================= -->
+    <section class="chapter" id="etapa1" data-ch="1" data-acts="a1,a2">
+      <div class="wrap">
+        <span class="badge">Julia</span>
+        <h2>Língua e sociedade</h2>
+        <p class="lead">Ninguém fala igual a ninguém, e isso é totalmente normal.</p>
+        <p class="learn"><b>Aqui você vai aprender…</b> o que é sociolinguística e os quatro tipos de variação
+          linguística: regional, social, histórica e situacional.</p>
+        <div class="chbar"><span><i></i></span><em>0%</em></div>
+
+        <div class="fact">
+          <div class="big">200 mi+</div>
+          <div>
+            <p>Mais de 200 milhões de pessoas vivem no Brasil, e cada uma fala de um jeito próprio.</p><small>Todo mundo
+              carrega no jeito de falar um pouco da sua região, da sua turma e da sua história.</small>
+          </div>
+        </div>
+
+        <h3>1. Sociolinguística: a língua vive na sociedade</h3>
+        <div class="point"><b>A sociolinguística estuda a relação entre a língua e a sociedade.</b> Ela observa como a
+          gente fala de verdade: onde moramos, com quem conversamos, qual a nossa idade e em que situação estamos.</div>
+        <div class="point"><b>A língua não é uma coisa parada.</b> Ela é viva: muda com o tempo e com as pessoas que a
+          usam, como uma cidade que sempre ganha novos cantos.</div>
+        <div class="point"><b>Por isso, falar diferente não é falar errado.</b> A sociolinguística mostra que a língua
+          tem muitas formas, e todas seguem regras próprias.</div>
+        <div class="activity" data-act="a1" data-title="Mito ou Verdade?" data-num="1 de 2"
+          data-sub="Leia cada frase e decida. Depois de responder, veja a explicação."></div>
+
+        <h3>2. Variação linguística: quatro jeitos de a língua mudar</h3>
+        <p>Chamamos de <b>variação linguística</b> as diferenças no modo de falar. Toque em cada card para virar e ver
+          exemplos.</p>
+        <div class="flips">
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Regional</b><small>muda com o
+                  lugar</small></span><span class="b"><span class="tag">REGIONAL</span><br>Depende de onde a pessoa
+                vive. Exemplos: <i>macaxeira, aipim, mandioca</i> (mesma raiz!), ou o <i>oxente</i> no Nordeste. Inclui
+                também o sotaque.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Social</b><small>muda com o
+                  grupo</small></span><span class="b"><span class="tag">SOCIAL</span><br>Depende do grupo: idade,
+                profissão, escolaridade, turma. Os skatistas, os gamers e as torcidas, por exemplo, têm palavras
+                próprias.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Histórica</b><small>muda com o
+                  tempo</small></span><span class="b"><span class="tag">HISTÓRICA</span><br>A língua muda ao longo dos
+                anos. <i>Vosmecê</i> virou <i>você</i>, que hoje muita gente fala <i>cê</i>. Nossos avós falavam
+                diferente de nós.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Situacional</b><small>muda com a
+                  ocasião</small></span><span class="b"><span class="tag">SITUACIONAL</span><br>Depende de onde estamos
+                e com quem falamos. Numa entrevista, falamos de modo mais formal; com amigos, de modo mais
+                solto.</span></span></button>
+        </div>
+        <div class="note">💡 Uma mesma pessoa usa vários tipos de variação ao mesmo tempo. Quem fala “oxente” num grupo
+          de amigos também sabe falar com o diretor.</div>
+        <div class="activity" data-act="a2" data-title="Que variação é essa?" data-num="2 de 2"
+          data-sub="Leia cada exemplo e escolha o tipo de variação."></div>
+
+        <div class="starmsg" hidden>★ Estrela da Julia conquistada! Você já entende como a língua vive na sociedade.
+        </div>
+        <a class="bridge" href="#etapa2">Agora que você sabe que a língua varia, a Luiza vai mostrar o que acontece
+          quando alguém desrespeita essas variações <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ================= ETAPA 2 ================= -->
+    <section class="chapter" id="etapa2" data-ch="2" data-acts="a3">
+      <div class="wrap">
+        <span class="badge">Luiza</span>
+        <h2>Respeito ao falar</h2>
+        <p class="lead">Existe jeito adequado, e não jeito “certo” para tudo.</p>
+        <p class="learn"><b>Aqui você vai aprender…</b> o que é preconceito linguístico, por que ele é injusto e como a
+          gente pode combatê-lo.</p>
+        <div class="chbar"><span><i></i></span><em>0%</em></div>
+
+        <h3>3. Preconceito linguístico</h3>
+        <div class="point"><b>Preconceito linguístico é julgar uma pessoa pelo jeito que ela fala.</b> É quando alguém
+          ri do sotaque, corrige com deboche ou diz que “fala errado”.</div>
+        <div class="point"><b>Ele costuma esconder outro preconceito.</b> Quase sempre atinge pessoas de certas regiões,
+          com menos acesso à escola ou de certas classes sociais. Zombar da fala é zombar de quem fala.</div>
+        <div class="point"><b>A norma-padrão existe e é importante.</b> Ela é útil em provas, textos formais e
+          documentos. O problema é achar que só ela é válida e que as outras formas são “feias”.</div>
+        <div class="point"><b>O que vale é a adequação.</b> Em vez de “certo ou errado”, pense: <span class="mark">essa
+            forma combina com a situação?</span></div>
+
+        <h3>Antes e depois</h3>
+        <div class="cmp">
+          <div>
+            <h4>😕 Comentário preconceituoso</h4>
+            <ul>
+              <li>“Que sotaque feio!”</li>
+              <li>“Fala direito, menino!”</li>
+              <li>“Esse povo não sabe português.”</li>
+            </ul>
+          </div>
+          <div>
+            <h4>😊 Comentário respeitoso</h4>
+            <ul>
+              <li>“Que sotaque diferente, de onde você é?”</li>
+              <li>“Nessa apresentação, vale usar uma fala mais formal.”</li>
+              <li>“Cada região fala de um jeito.”</li>
+            </ul>
+          </div>
+        </div>
+        <div class="activity" data-act="a3" data-title="O que você responderia?" data-num="1 de 1"
+          data-sub="Escolha a atitude que mais respeita a diversidade da língua."></div>
+
+        <div class="starmsg" hidden>★ Estrela da Luiza conquistada! Respeito também se aprende falando.</div>
+        <a class="bridge" href="#etapa3">Respeitar o jeito de falar abre espaço para conhecer as gírias e os jargões. A
+          Julia explica a diferença <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ================= ETAPA 3 ================= -->
+    <section class="chapter" id="etapa3" data-ch="3" data-acts="a4,a5">
+      <div class="wrap">
+        <span class="badge">Julia</span>
+        <h2>Gírias e jargões</h2>
+        <p class="lead">Dois vocabulários de grupo, mas com funções diferentes.</p>
+        <p class="learn"><b>Aqui você vai descobrir…</b> o que é gíria, o que é jargão e como diferenciar um do outro.
+        </p>
+        <div class="chbar"><span><i></i></span><em>0%</em></div>
+
+        <h3>4. O que são gírias?</h3>
+        <div class="point"><b>Gíria é um vocabulário informal criado por um grupo.</b> Ela costuma ser criativa,
+          divertida e cheia de humor, e serve para dar identidade ao grupo.</div>
+        <div class="point"><b>Nasce na fala.</b> Surge na rua, na escola, nos games, nas músicas e nas redes, e só
+          depois alguns termos se espalham.</div>
+        <div class="point"><b>Dá sentido de pertencimento.</b> Quando você entende a gíria, você “é da turma”.</div>
+        <div class="point"><b>Tem hora certa.</b> Gíria combina com conversa entre amigos. Em situações formais, escolha
+          outras palavras.</div>
+        <div class="activity" data-act="a4" data-title="Que gíria é essa?" data-num="1 de 2"
+          data-sub="Pense no significado e toque no card para revelar. Revele as 6 para completar."></div>
+
+        <h3>5. O que é jargão?</h3>
+        <div class="point"><b>Jargão é o vocabulário técnico de uma profissão ou área.</b> Médicos, advogados, jogadores
+          e programadores têm palavras que usam para falar com precisão.</div>
+        <div class="flips">
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Direito</b><small>toque para
+                  virar</small></span><span class="b"><span class="tag">JARGÃO</span><br><i>Habeas corpus</i>: pedido
+                para proteger a liberdade de alguém que sofre ameaça ilegal de prisão.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Medicina</b><small>toque para
+                  virar</small></span><span class="b"><span class="tag">JARGÃO</span><br><i>Anamnese</i>: conversa em
+                que o profissional pergunta sobre o histórico da pessoa para entender a saúde
+                dela.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Informática</b><small>toque para
+                  virar</small></span><span class="b"><span class="tag">JARGÃO</span><br><i>Backup</i>: cópia de
+                segurança dos arquivos, para não perder tudo se algo der errado.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Publicidade</b><small>toque para
+                  virar</small></span><span class="b"><span class="tag">JARGÃO</span><br><i>Briefing</i>: resumo com as
+                informações e os objetivos de um trabalho.</span></span></button>
+        </div>
+        <h4>Gíria × jargão</h4>
+        <div class="cmp">
+          <div>
+            <h4>Gíria</h4>
+            <ul>
+              <li>Vocabulário de grupos de jovens, turmas e comunidades</li>
+              <li>Informal, criativa e expressiva</li>
+              <li>Muda rápido</li>
+              <li>Marca identidade</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Jargão</h4>
+            <ul>
+              <li>Vocabulário de profissões e áreas de conhecimento</li>
+              <li>Técnico e preciso</li>
+              <li>Muda mais devagar</li>
+              <li>Facilita a comunicação de especialistas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="warn">⚠ Os dois podem se misturar. “Bugado”, por exemplo, nasceu do jargão da informática e virou
+          gíria.</div>
+        <div class="activity" data-act="a5" data-title="Gíria ou jargão?" data-num="2 de 2"
+          data-sub="Escolha a categoria de cada expressão."></div>
+
+        <div class="starmsg" hidden>★ Estrela da Julia conquistada! Gíria e jargão, cada um no seu lugar.</div>
+        <a class="bridge" href="#etapa4">As gírias não ficam paradas: elas nascem, correm e se renovam. A Luiza mostra o
+          ritmo disso e apresenta a turma GSF <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ================= ETAPA 4 ================= -->
+    <section class="chapter" id="etapa4" data-ch="4" data-acts="a6,a7">
+      <div class="wrap">
+        <span class="badge">Luiza</span>
+        <h2>A turma GSF</h2>
+        <p class="lead">Gíria que não se renova vira peça de museu.</p>
+        <p class="learn"><b>Aqui você vai descobrir…</b> como as gírias nascem e envelhecem e quem é a Geração Sem
+          Filtro.</p>
+        <div class="chbar"><span><i></i></span><em>0%</em></div>
+
+        <h3>6. O ritmo e a renovação das gírias</h3>
+        <p>As gírias têm vida curta e vida longa. Veja o caminho que muitas percorrem:</p>
+        <div class="steps">
+          <div class="step"><b>1</b>
+            <h4>Nasce</h4>
+            <p>Um grupo cria uma palavra ou uma nova forma de usar uma palavra.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step"><b>2</b>
+            <h4>Circula</h4>
+            <p>Amigos, vídeos, músicas e memes espalham a ideia.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step"><b>3</b>
+            <h4>Vira moda</h4>
+            <p>Muita gente usa, em vários lugares.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step"><b>4</b>
+            <h4>Desgasta</h4>
+            <p>Quando todo mundo usa, o grupo original perde o “segredo” e cria outra.</p>
+          </div>
+          <div class="arrow">→</div>
+          <div class="step"><b>5</b>
+            <h4>Some ou fica</h4>
+            <p>Algumas caem em desuso; outras entram para o uso geral.</p>
+          </div>
+        </div>
+        <div class="fact">
+          <div class="big">legal</div>
+          <p>A palavra <b>legal</b> primeiro significava “conforme a lei”. Depois passou a ser gíria para “bom” e hoje é
+            usada por todo mundo.<br><small>Mostra como o sentido das palavras muda com o uso.</small></p>
+        </div>
+        <div class="note">📱 Hoje as redes sociais aceleram tudo: uma gíria pode nascer de manhã e já estar cansada no
+          fim do mês.</div>
+        <div class="activity" data-act="a6" data-title="Mito ou Verdade?" data-num="1 de 2"
+          data-sub="Sobre o ritmo e a renovação das gírias."></div>
+
+        <h3>7. A Geração Sem Filtro (GSF)</h3>
+        <div class="point"><b>GSF é o nome que usamos para os jovens que cresceram conectados.</b> Eles falam do jeito
+          que pensam: rápido, espontâneo, com humor e sem muita cerimônia.</div>
+        <div class="point"><b>A fala e a escrita se misturam.</b> No chat, a gente escreve como fala: <i>vc, tbm, blz,
+            vlw, tmj, kkk</i>, emojis, figurinhas e áudios.</div>
+        <div class="point"><b>A criatividade é a marca.</b> Memes, vídeos curtos, jogos e músicas viram fábrica de
+          gírias.</div>
+        <div class="warn">⚠ “Sem filtro” quer dizer <b>fala natural e espontânea</b>, e não fala sem respeito. Ofender e
+          humilhar nunca é “só gíria”.</div>
+        <div class="activity" data-act="a7" data-title="Você conhece a GSF?" data-num="2 de 2"
+          data-sub="Escolha a alternativa mais correta."></div>
+
+        <div class="starmsg" hidden>★ Estrela da Luiza conquistada! A turma GSF não tem segredo para você.</div>
+        <a class="bridge" href="#etapa5">Mas por que as gírias soam do jeito que soam? A Julia explica o papel da
+          fonética e da identidade jovem <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ================= ETAPA 5 ================= -->
+    <section class="chapter" id="etapa5" data-ch="5" data-acts="a8,a9">
+      <div class="wrap">
+        <span class="badge">Julia</span>
+        <h2>Som e identidade</h2>
+        <p class="lead">Falar é fazer som, e o som também carrega quem a gente é.</p>
+        <p class="learn"><b>Aqui você vai…</b> descobrir como a fonética ajuda a criar gírias e por que elas são tão
+          importantes para a identidade jovem.</p>
+        <div class="chbar"><span><i></i></span><em>0%</em></div>
+
+        <h3>8. Como a fonética influencia nas gírias?</h3>
+        <div class="point"><b>Fonética é o estudo dos sons da fala.</b> Quando falamos rápido, a gente “economiza” sons:
+          corta, junta e muda pedaços das palavras. Muitas gírias nascem desse jeito.</div>
+        <div class="point"><b>Letra não é som.</b> “Está” se escreve com E, mas, na fala, vira <i>tá</i>. A fala segue o
+          ritmo da boca, não o da escrita.</div>
+        <h4>Quatro jeitos de “encurtar” a palavra</h4>
+        <div class="flips">
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Corte no começo</b><small>está →
+                  tá</small></span><span class="b"><span class="tag">COMEÇO</span><br><i>está → tá, estou → tô, você →
+                  cê</i>. Some o início da palavra. Os linguistas chamam de <i>aférese</i>.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Corte no fim</b><small>professor →
+                  profe</small></span><span class="b"><span class="tag">FIM</span><br><i>professor → profe, vamos →
+                  vamo</i>. Some o final. Chamamos de <i>apócope</i>.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Corte no meio</b><small>para →
+                  pra</small></span><span class="b"><span class="tag">MEIO</span><br><i>para → pra</i>. Um pedaço do
+                meio some e a palavra fica menor. É a <i>síncope</i>.</span></span></button>
+          <button class="flip" aria-pressed="false"><span><span class="f"><b>Junção</b><small>não é →
+                  né</small></span><span class="b"><span class="tag">JUNÇÃO</span><br><i>não é → né</i>. Duas palavras
+                se fundem em uma, e a fala fica mais rápida.</span></span></button>
+        </div>
+        <div class="demo">
+          <h4>Da escrita formal para a fala</h4>
+          <p>Veja uma frase se transformando passo a passo, como acontece na conversa.</p>
+          <div class="typed" id="typed" aria-live="polite">Você está com fome, não é?</div>
+          <div class="demo-note" id="demoNote">Frase da escrita formal.</div>
+          <button class="btn sm" id="replay">Ver de novo</button>
+        </div>
+        <div class="note">🎵 O ritmo e a entonação também criam gíria: alongar o som (<i>simmm</i>), repetir (<i>nossa,
+            nossa!</i>) ou falar com um tom irônico muda totalmente o sentido.</div>
+        <div class="activity" data-act="a8" data-title="Como a palavra foi encurtada?" data-num="1 de 2"
+          data-sub="Escolha o tipo de mudança sonora de cada exemplo."></div>
+
+        <h3>9. A importância das gírias na preservação da identidade jovem</h3>
+        <div class="point"><b>As gírias dizem “somos nós”.</b> Elas mostram o jeito de falar, de brincar e de viver de
+          cada geração.</div>
+        <div class="point"><b>Elas guardam a memória do grupo.</b> Quando alguém lembra uma gíria antiga, lembra também
+          uma época, uma música e uma turma.</div>
+        <div class="point"><b>Elas mostram que a língua está viva.</b> Cada geração acrescenta algo novo. Isso é parte
+          natural da história da língua.</div>
+        <div class="point"><b>Elas pedem consciência.</b> Quem domina várias formas de falar tem mais liberdade: é capaz
+          de falar com a turma e também em ocasiões formais.</div>
+
+        <h4>Meu mini dicionário GSF</h4>
+        <p>Escreva uma gíria que você usa e o que ela significa. Fica salvo só neste aparelho.</p>
+        <div class="dict">
+          <div><label class="lb" for="gTerm">Gíria</label><input type="text" id="gTerm" data-save="gTerm" maxlength="40"
+              placeholder="ex.: sussa"></div>
+          <div><label class="lb" for="gMean">Significado e exemplo</label><input type="text" id="gMean"
+              data-save="gMean" maxlength="140" placeholder="ex.: tranquilo, de boa. “Tá tudo sussa!”"></div>
+        </div>
+        <div class="activity" data-act="a9" data-title="Por que as gírias importam?" data-num="2 de 2"
+          data-sub="Escolha a melhor alternativa."></div>
+
+        <div class="starmsg" hidden>★ Estrela da Julia conquistada! Você entendeu o som e a identidade das gírias.</div>
+        <a class="bridge" href="#fechamento">Bora juntar tudo? Julia e Luiza têm um recado final para você <i>→</i></a>
+      </div>
+    </section>
+
+    <!-- ================= FECHAMENTO ================= -->
+    <section class="close" id="fechamento">
+      <div class="wrap">
+        <span class="badge">Julia e Luiza</span>
+        <h2>Fechamento</h2>
+        <p>Uma frase de cada etapa. Fica fácil de lembrar e mostra que tudo se conecta.</p>
+        <div class="carou" aria-live="polite">
+          <div class="who" id="cWho"></div>
+          <p id="cTxt"></p>
+          <button id="cPrev" aria-label="Anterior">←</button><button id="cNext" aria-label="Próxima">→</button>
+        </div>
+
+        <h3>Revisão: os 9 assuntos num olhar</h3>
+        <div style="overflow-x:auto">
+          <table class="rev9">
+            <tr>
+              <th>Assunto</th>
+              <th>Em uma frase</th>
+            </tr>
+            <tr>
+              <td>1. Sociolinguística</td>
+              <td>Estuda a língua em uso na sociedade.</td>
+            </tr>
+            <tr>
+              <td>2. Variação linguística</td>
+              <td>Regional, social, histórica e situacional.</td>
+            </tr>
+            <tr>
+              <td>3. Preconceito linguístico</td>
+              <td>Julgar alguém pelo jeito de falar; o que vale é a adequação.</td>
+            </tr>
+            <tr>
+              <td>4. Gírias</td>
+              <td>Vocabulário informal e criativo de um grupo.</td>
+            </tr>
+            <tr>
+              <td>5. Jargão</td>
+              <td>Vocabulário técnico de uma área ou profissão.</td>
+            </tr>
+            <tr>
+              <td>6. Ritmo das gírias</td>
+              <td>Nascem, circulam, desgastam e se renovam.</td>
+            </tr>
+            <tr>
+              <td>7. GSF</td>
+              <td>Geração conectada, de fala espontânea e criativa, com respeito.</td>
+            </tr>
+            <tr>
+              <td>8. Fonética</td>
+              <td>Cortes e junções de sons ajudam a criar gírias.</td>
+            </tr>
+            <tr>
+              <td>9. Identidade jovem</td>
+              <td>Gírias marcam pertencimento e mostram a língua viva.</td>
+            </tr>
+          </table>
+        </div>
+
+        <h3>Desafio final da semana</h3>
+        <p>Reveja os 9 assuntos na prática. Marque conforme for fazendo:</p>
+        <ul class="checks">
+          <li><label><input type="checkbox" data-save="d1"><span><b>1.</b> Anote 5 gírias que você ouviu esta semana.
+                Diga se cada uma é gíria ou jargão e que tipo de variação ela mostra (regional, social, histórica ou
+                situacional).</span></label></li>
+          <li><label><input type="checkbox" data-save="d2"><span><b>2.</b> Escolha 2 delas e explique, com a fonética,
+                se houve corte no começo, no fim, no meio ou junção. Se a gíria é nova, observe: ela ainda está “na
+                moda” ou já cansou?</span></label></li>
+          <li><label><input type="checkbox" data-save="d3"><span><b>3.</b> Converse com alguém mais velho sobre as
+                gírias de antigamente e, juntos, comparem. Combinem como falar com respeito, sem preconceito
+                linguístico, e escolham a fala certa para cada situação.</span></label></li>
+        </ul>
+
+        <h3 id="cartao">Cartão de bolso</h3>
+        <div id="cartaoWrap">
+          <div class="pocket" id="pocket">
+            <div class="top">CARTÃO DE BOLSO · OFICINA 8º ANO</div>
+            <h3>A língua é viva!</h3>
+            <ol>
+              <li>Sociolinguística: língua e sociedade andam juntas.</li>
+              <li>Variação: regional, social, histórica, situacional.</li>
+              <li>Ninguém fala “errado”: fale de modo adequado.</li>
+              <li>Gíria: vocabulário criativo do grupo.</li>
+              <li>Jargão: vocabulário técnico da área.</li>
+              <li>Gíria nasce, circula, cansa e se renova.</li>
+              <li>GSF: fala espontânea, mas com respeito.</li>
+              <li>Fonética: cortar e juntar sons cria gírias.</li>
+              <li>Gíria = identidade e pertencimento.</li>
+            </ol>
+            <div class="tools"><button class="btn alt sm" id="dlCard">⬇ Baixar</button><button class="btn alt sm"
+                id="prCard">🖨 Imprimir</button></div>
+          </div>
+        </div>
+
+        <h3>Perguntas que costumam aparecer</h3>
+        <details>
+          <summary>“Gíria é falar errado?”</summary>
+          <p>Não. Gíria é uma variação da língua, própria de certos grupos. O que importa é usar na situação certa.</p>
+        </details>
+        <details>
+          <summary>“Posso usar gíria na escola?”</summary>
+          <p>Entre colegas, sim. Em provas, redações e apresentações formais, use a fala mais monitorada, e combine com
+            o professor quando tiver dúvida.</p>
+        </details>
+        <details>
+          <summary>“Por que os adultos não entendem nossas gírias?”</summary>
+          <p>Porque gírias são marcas de grupo e mudam rápido. Cada geração tem as suas, e os adultos também tiveram as
+            deles.</p>
+        </details>
+        <details>
+          <summary>“Toda abreviação é gíria?”</summary>
+          <p>Não. Abreviações como “pra” e “tá” são comuns na fala de todo mundo. Já a gíria é uma palavra ou expressão
+            própria de um grupo.</p>
+        </details>
+        <details>
+          <summary>“O que é ‘sem filtro’, afinal?”</summary>
+          <p>É falar de modo espontâneo e natural. Mas respeito não tem filtro opcional: não vale ofender ninguém.</p>
+        </details>
+        <details>
+          <summary>“As gírias vão acabar com a língua portuguesa?”</summary>
+          <p>Não. A língua sempre mudou, e as gírias são uma das formas dessa renovação. Algumas desaparecem e outras
+            permanecem.</p>
+        </details>
+
+        <h3>Referências consultadas</h3>
+        <details class="refs">
+          <summary>Ver a bibliografia de apoio</summary>
+          <p>Obras de apoio para o estudo. Confira sempre com o seu professor e com o livro didático.</p>
+          <h5>Sociolinguística e variação</h5>
+          <ul>
+            <li>BORTONI-RICARDO, Stella Maris. <i>Educação em língua materna: a sociolinguística na sala de aula</i>.
+              São Paulo: Parábola, 2004.</li>
+            <li>LABOV, William. <i>Sociolinguistic Patterns</i>. Philadelphia: University of Pennsylvania Press, 1972.
+            </li>
+          </ul>
+          <h5>Preconceito linguístico</h5>
+          <ul>
+            <li>BAGNO, Marcos. <i>Preconceito linguístico: o que é, como se faz</i>. São Paulo: Loyola.</li>
+          </ul>
+          <h5>Gírias, jargões e identidade</h5>
+          <ul>
+            <li>PRETI, Dino. <i>A gíria e outros temas</i>. São Paulo: T. A. Queiroz / EDUSP.</li>
+          </ul>
+          <h5>Fonética</h5>
+          <ul>
+            <li>CAGLIARI, Luiz Carlos. <i>Análise fonológica: introdução à teoria e à prática</i>. Campinas: Mercado de
+              Letras.</li>
+          </ul>
+          <h5>Orientações curriculares</h5>
+          <ul>
+            <li>BRASIL. Ministério da Educação. <i>Base Nacional Comum Curricular (BNCC)</i>, componente Língua
+              Portuguesa. Disponível em <a href="https://basenacionalcomum.mec.gov.br" target="_blank"
+                rel="noopener">basenacionalcomum.mec.gov.br ↗</a></li>
+          </ul>
+        </details>
+
+        <p class="endq">Ficou com dúvida? <em>Boa pergunta.</em> Vamos conferir juntos com o professor ou num livro de
+          confiança?</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <svg role="img" aria-label="Logo da Oficina 8º Ano">
+        <use href="#logo" />
+      </svg>
+      <p>Oficina 8º Ano · A Linguagem Secreta dos GSF</p>
+      <p>Sem login, sem cadastro: seu progresso fica só neste aparelho.<br><button id="resetBtn">Apagar meu progresso
+          deste aparelho</button></p>
+    </div>
+  </footer>
+
+  <dialog id="hatDlg" aria-labelledby="hatTitle">
+    <h2 id="hatTitle">Seu chapéu de estrelas</h2>
+    <svg class="hat" id="hatSvg" viewBox="0 0 240 150" role="img" aria-label="Chapéu de cangaço com cinco estrelas">
+      <path d="M10 98c18-14 60-20 110-20s92 6 110 20c-4 16-40 24-110 24S14 114 10 98z" fill="#F59AB8" stroke="#2A1A1F"
+        stroke-width="4" />
+      <path d="M52 86c4-46 30-70 68-70s64 24 68 70z" fill="#F59AB8" stroke="#2A1A1F" stroke-width="4" />
+      <g id="hatStars"></g>
+    </svg>
+    <p id="hatText">Complete as atividades para encher o chapéu.</p>
+    <button class="btn" id="hatClose">Continuar</button>
+  </dialog>
+
+  <dialog id="doneDlg" aria-labelledby="doneTitle">
+    <h2 id="doneTitle">Você é arretado(a)!</h2>
+    <svg class="hat" viewBox="0 0 240 150" aria-hidden="true">
+      <path d="M10 98c18-14 60-20 110-20s92 6 110 20c-4 16-40 24-110 24S14 114 10 98z" fill="#F59AB8" stroke="#2A1A1F"
+        stroke-width="4" />
+      <path d="M52 86c4-46 30-70 68-70s64 24 68 70z" fill="#F59AB8" stroke="#2A1A1F" stroke-width="4" />
+      <g fill="#FFC83D" stroke="#2A1A1F" stroke-width="2">
+        <use href="#star" x="102" y="22" width="36" height="36" />
+        <use href="#star" x="62" y="52" width="30" height="30" />
+        <use href="#star" x="148" y="52" width="30" height="30" />
+        <use href="#star" x="86" y="86" width="28" height="28" />
+        <use href="#star" x="126" y="86" width="28" height="28" />
+      </g>
+    </svg>
+    <p>Agora é usar a língua a seu favor: fale com a turma do seu jeito e escolha a fala certa para cada ocasião.</p>
+    <p>Você juntou as 5 estrelas do chapéu. Leve o cartão de bolso com você e faça o desafio final.</p>
+    <p><a class="btn" href="#cartao" id="doneCard">Ver meu cartão de bolso</a></p>
+    <p><button class="btn alt sm" id="doneClose">Fechar</button></p>
+  </dialog>
+
+  <script>
+    (function () {
+      "use strict";
+      var KEY = "gsf-meninas-digitais-v1";
+      var S = { done: {}, stars: {}, save: {} };
+      try { var raw = localStorage.getItem(KEY); if (raw) { var p = JSON.parse(raw); S.done = p.done || {}; S.stars = p.stars || {}; S.save = p.save || {}; } } catch (e) { }
+      function persist() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
+      function $(s, r) { return (r || document).querySelector(s) }
+      function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+      function el(t, c, h) { var e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e }
+
+      /* ---------- ATIVIDADES (conteúdo) ---------- */
+      var TF = ["Mito", "Verdade"];
+      var ACT = {
+        a1: {
+          opts: TF, items: [
+            { q: "A sociolinguística estuda como a língua muda de acordo com a sociedade e com quem fala.", a: 1, w: "A sociolinguística observa a língua em uso, junto com fatores sociais como região, idade, grupo e situação." },
+            { q: "Existe um único jeito “certo” de falar, igual em todos os lugares e situações.", a: 0, w: "Não existe. A língua varia, e cada forma segue as suas regras. O que muda é se ela é adequada à situação." },
+            { q: "Uma mesma pessoa pode falar de formas diferentes conforme com quem conversa.", a: 1, w: "Falamos de um jeito com amigos e de outro com o diretor, e isso é variação situacional." },
+            { q: "Só quem estudou pouco usa variações da língua.", a: 0, w: "Todo mundo usa variações. Até quem domina a norma-padrão fala de modo diferente em casa, no trabalho e com amigos." }]
+        },
+        a2: {
+          opts: ["Regional", "Social", "Histórica", "Situacional"], items: [
+            { q: "Em alguns lugares se diz “macaxeira”; em outros, “aipim” ou “mandioca”.", a: 0, w: "O nome muda de acordo com a região: variação regional." },
+            { q: "Antigamente se dizia “vosmecê”; hoje se diz “você”.", a: 2, w: "A mudança aconteceu ao longo do tempo: variação histórica." },
+            { q: "Você fala com o diretor de um jeito e com seu melhor amigo de outro.", a: 3, w: "Muda a ocasião e a pessoa com quem se fala: variação situacional." },
+            { q: "Um grupo de skatistas usa palavras que só a turma entende bem.", a: 1, w: "O vocabulário é do grupo: variação social." },
+            { q: "“Oxente” é uma expressão muito comum no Nordeste.", a: 0, w: "Está ligada a uma região: variação regional." },
+            { q: "Numa entrevista de emprego, a pessoa fala de modo mais cuidadoso.", a: 3, w: "A situação pede mais formalidade: variação situacional." }]
+        },
+        a3: {
+          opts: null, items: [
+            { q: "Um colega diz: “Nordestino fala tudo errado.” Qual é a melhor resposta?", o: ["Concordar, porque é verdade.", "Explicar que todo jeito de falar tem as suas regras e que o importante é adequar a fala à situação.", "Imitar o sotaque, rindo."], a: 1, w: "Julgar o sotaque é preconceito linguístico. Explicar com respeito ajuda a combatê-lo." },
+            { q: "Corrigir alguém com deboche porque ele usou uma forma informal numa conversa entre amigos é…", o: ["Uma forma de ajudar a pessoa.", "Preconceito linguístico, pois ignora que a fala adequada depende da situação.", "Obrigação, porque só existe um jeito certo."], a: 1, w: "Numa conversa entre amigos, a forma informal é adequada. O deboche é que não é." },
+            { q: "Qual é a melhor maneira de combater o preconceito linguístico?", o: ["Ensinar que só a norma-padrão vale.", "Ignorar a existência da norma-padrão.", "Valorizar a diversidade e aprender a escolher a fala adequada a cada situação."], a: 2, w: "A norma-padrão tem seu lugar, mas todas as variedades merecem respeito." }]
+        },
+        a5: {
+          opts: ["Gíria", "Jargão"], items: [
+            { q: "habeas corpus", a: 1, w: "Termo técnico do Direito: jargão." },
+            { q: "daora", a: 0, w: "Expressão informal de grupo, que quer dizer algo como “legal”: gíria." },
+            { q: "backup", a: 1, w: "Termo técnico da informática: jargão." },
+            { q: "mó legal", a: 0, w: "“Mó” é expressão informal de intensidade: gíria." },
+            { q: "anamnese", a: 1, w: "Termo técnico da área da saúde: jargão." },
+            { q: "sussa", a: 0, w: "Quer dizer “tranquilo, de boa”: gíria." }]
+        },
+        a6: {
+          opts: TF, items: [
+            { q: "As gírias costumam durar para sempre sem mudar.", a: 0, w: "Ao contrário: elas nascem, se renovam e muitas caem em desuso." },
+            { q: "Quando muita gente passa a usar uma gíria, o grupo original pode criar outra.", a: 1, w: "É o desgaste. A turma que criou a gíria precisa de uma novidade para continuar se diferenciando." },
+            { q: "Algumas gírias entram para o uso geral e até para os dicionários.", a: 1, w: "Como o caso do “legal”, que passou de “conforme a lei” a “bom” e hoje é usado por todos." },
+            { q: "As redes sociais deixam as gírias circularem mais depressa.", a: 1, w: "Vídeos, memes e chats espalham gírias em pouco tempo." }]
+        },
+        a7: {
+          opts: null, items: [
+            { q: "O que “sem filtro” quer dizer no nome GSF?", o: ["Fala espontânea, natural e informal.", "Que pode ofender sem consequências.", "Que não precisa respeitar ninguém."], a: 0, w: "“Sem filtro” é espontaneidade. Respeito continua sendo regra." },
+            { q: "Qual é uma marca da linguagem da GSF nas redes?", o: ["Só usar a norma-padrão.", "Mistura de fala e escrita, abreviações, emojis e memes.", "Evitar qualquer abreviação."], a: 1, w: "No chat, a escrita imita a fala, com abreviações, emojis, figurinhas e áudios." },
+            { q: "“Vlw”, “tmj” e “blz” são exemplos de…", o: ["Jargão jurídico.", "Abreviações da escrita digital que imitam a fala.", "Palavras da norma-padrão."], a: 1, w: "São formas curtas que imitam a fala: valeu, tamo junto, beleza." },
+            { q: "Falar “sem filtro” vale em qualquer situação?", o: ["Sim, sempre.", "Não: é preciso adequar a fala à situação e respeitar as pessoas.", "Só na escola."], a: 1, w: "A adequação continua valendo. Num texto formal ou numa entrevista, usamos outra forma." }]
+        },
+        a8: {
+          opts: ["Começo", "Fim", "Meio", "Junção"], items: [
+            { q: "está → tá", a: 0, w: "Some o início da palavra (aférese)." },
+            { q: "professor → profe", a: 1, w: "Some o final (apócope)." },
+            { q: "para → pra", a: 2, w: "Some um pedaço do meio (síncope)." },
+            { q: "não é → né", a: 3, w: "Duas palavras viram uma só." },
+            { q: "você → cê", a: 0, w: "Some o início (aférese): vo-cê → cê." },
+            { q: "vamos → vamo", a: 1, w: "Some o final (apócope)." }]
+        },
+        a9: {
+          opts: null, items: [
+            { q: "Por que as gírias ajudam a preservar a identidade jovem?", o: ["Porque marcam o pertencimento ao grupo e mostram um jeito próprio de falar e viver.", "Porque substituem a norma-padrão.", "Porque ninguém mais entende a língua."], a: 0, w: "Gíria é marca de grupo e de geração." },
+            { q: "Qual atitude mostra respeito à diversidade linguística?", o: ["Rir de quem fala diferente.", "Usar gírias entre amigos e adequar a fala em situações formais.", "Proibir qualquer gíria."], a: 1, w: "Saber variar a fala é uma habilidade importante." },
+            { q: "Se uma gíria “sai de moda”, isso quer dizer que…", o: ["A língua parou de mudar.", "A identidade jovem continua criando novas formas de falar.", "Os jovens não têm identidade."], a: 1, w: "A renovação é natural: sempre aparecem novas gírias." },
+            { q: "Qual afirmação é verdadeira?", o: ["Gírias são um erro da língua.", "Gírias são parte legítima de uma língua viva.", "Só adultos criam gírias."], a: 1, w: "As gírias fazem parte do uso real da língua." }]
+        }
+      };
+      var REVEAL = [
+        { t: "Crush", m: "Pessoa por quem alguém sente atração ou paixão. Ex.: “Ela é meu crush.”" },
+        { t: "Cringe", m: "Algo que dá vergonha alheia ou parece forçado. Ex.: “Essa dancinha ficou cringe.”" },
+        { t: "Flopar", m: "Não dar certo, não fazer sucesso. Ex.: “O vídeo flopou.”" },
+        { t: "Mitar", m: "Fazer algo incrível. Ex.: “Você mitou na apresentação!”" },
+        { t: "Rolê", m: "Passeio ou programa com amigos. Ex.: “Bora pro rolê?”" },
+        { t: "Sussa", m: "Tranquilo, sem problema. Ex.: “Tá tudo sussa.”" }
+      ];
+      var CH = { 1: ["a1", "a2"], 2: ["a3"], 3: ["a4", "a5"], 4: ["a6", "a7"], 5: ["a8", "a9"] };
+      var ALLACTS = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
+
+      /* ---------- ENGINE ---------- */
+      function mountQuiz(box, id) {
+        var cfg = ACT[id]; var items = cfg.items; var i = 0, score = 0;
+        var head = el("div", "", '<span class="tagact">Atividade ' + box.dataset.num + ' · vale estrela</span><h3>' + box.dataset.title + '</h3><p>' + box.dataset.sub + '</p>');
+        var body = el("div"); box.appendChild(head); box.appendChild(body);
+        function done(onLoad) {
+          S.done[id] = true; persist();
+          body.innerHTML = "";
+          var e = el("div", "act-end", '<p class="score">✅ Atividade concluída! Você acertou ' + score + ' de ' + items.length + '.</p><p>Revise as explicações se quiser e tente de novo.</p>');
+          var b = el("button", "btn alt sm", "Refazer"); b.onclick = function () { i = 0; score = 0; render(); };
+          e.appendChild(b); body.appendChild(e); refresh(onLoad !== true);
+        }
+        function render() {
+          body.innerHTML = "";
+          var it = items[i];
+          body.appendChild(el("div", "q-count", "Pergunta " + (i + 1) + " de " + items.length));
+          body.appendChild(el("div", "q-text", it.q));
+          var op = el("div", "opts"); var labels = it.o || cfg.opts; var btns = [];
+          labels.forEach(function (l, k) {
+            var b = el("button", "opt", l); b.type = "button";
+            b.onclick = function () {
+              btns.forEach(function (x) { x.disabled = true });
+              var ok = (k === it.a); if (ok) score++;
+              b.classList.add(ok ? "ok" : "no"); if (!ok) btns[it.a].classList.add("ok");
+              var fb = el("div", "fb " + (ok ? "ok" : "no"), "<b>" + (ok ? "Isso mesmo! ✔" : "Quase! A resposta certa é: " + labels[it.a]) + "</b>" + it.w);
+              body.appendChild(fb);
+              var nx = el("button", "btn sm", i < items.length - 1 ? "Próxima →" : "Concluir ★"); nx.style.marginTop = "12px";
+              nx.onclick = function () { if (i < items.length - 1) { i++; render(); } else done(false); };
+              body.appendChild(nx); nx.focus({ preventScroll: true });
+            };
+            btns.push(b); op.appendChild(b);
+          });
+          body.appendChild(op);
+        }
+        if (S.done[id]) { done(true); } else render();
+      }
+      function mountReveal(box, id) {
+        box.appendChild(el("div", "", "<span class='tagact'>Atividade " + box.dataset.num + " · vale estrela</span><h3>" + box.dataset.title + "</h3><p>" + box.dataset.sub + "</p>"));
+        var grid = el("div", "reveals"); var cnt = el("p", "q-count", "0 de 6 reveladas"); var seen = {};
+        REVEAL.forEach(function (r, k) {
+          var b = el("button", "rev", "<b>" + r.t + "</b><div class='hintx'>Pense no que significa e toque.</div><div class='ans'>" + r.m + "</div>");
+          b.type = "button"; b.setAttribute("aria-pressed", "false");
+          b.onclick = function () { b.setAttribute("aria-pressed", "true"); seen[k] = 1; var n = Object.keys(seen).length; cnt.textContent = n + " de 6 reveladas"; if (n === 6 && !S.done[id]) { S.done[id] = true; persist(); cnt.textContent = "✅ As 6 reveladas! Atividade concluída."; refresh(true); } };
+          grid.appendChild(b);
+        });
+        box.appendChild(grid); box.appendChild(cnt);
+        if (S.done[id]) { $$(".rev", grid).forEach(function (b) { b.setAttribute("aria-pressed", "true") }); cnt.textContent = "✅ As 6 reveladas! Atividade concluída."; }
+      }
+      $$(".activity").forEach(function (box) { var id = box.dataset.act; if (id === "a4") mountReveal(box, id); else mountQuiz(box, id); });
+
+      /* ---------- PROGRESSO / ESTRELAS ---------- */
+      var lastCount = 0;
+      function refresh(celebrate) {
+        var total = 0;
+        Object.keys(CH).forEach(function (n) {
+          var acts = CH[n]; var c = acts.filter(function (a) { return S.done[a] }).length;
+          var pct = Math.round(c / acts.length * 100);
+          var sec = $("#etapa" + n); var bar = $(".chbar i", sec); bar.style.width = pct + "%"; $(".chbar em", sec).textContent = pct + "%";
+          var earned = c === acts.length;
+          var msg = $(".starmsg", sec);
+          if (earned) {
+            if (!S.stars[n]) { S.stars[n] = 1; persist(); if (celebrate) { burst(30); } }
+            msg.hidden = false; total++;
+          } else { msg.hidden = true; delete S.stars[n]; }
+          var mc = $('[data-card="' + n + '"]'); mc.classList.toggle("done", earned);
+          var ml = $('.menu [data-m="' + n + '"]'); ml.classList.toggle("done", earned);
+        });
+        $("#starCount").textContent = total + "/5 ★";
+        drawHat(total);
+        if (total === 5 && lastCount < 5 && celebrate) { setTimeout(function () { burst(90); openDlg($("#doneDlg")); }, 600); }
+        lastCount = total; persist();
+      }
+      function drawHat(n) {
+        var pos = [[102, 22, 36], [62, 52, 30], [148, 52, 30], [86, 86, 28], [126, 86, 28]];
+        var g = $("#hatStars"); g.innerHTML = "";
+        pos.forEach(function (p, k) {
+          var u = document.createElementNS("http://www.w3.org/2000/svg", "use");
+          u.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#star"); u.setAttribute("href", "#star");
+          u.setAttribute("x", p[0]); u.setAttribute("y", p[1]); u.setAttribute("width", p[2]); u.setAttribute("height", p[2]);
+          var on = !!S.stars[k + 1]; u.setAttribute("fill", on ? "#FFC83D" : "#E8B6C4"); u.setAttribute("stroke", "#2A1A1F"); u.setAttribute("stroke-width", "1.5");
+          g.appendChild(u);
+        });
+        $("#hatText").textContent = n === 5 ? "O chapéu está completo! 🎉" : "Você tem " + n + " de 5 estrelas. Complete as atividades para encher o chapéu.";
+      }
+      function openDlg(d) { if (d.showModal) d.showModal(); else d.setAttribute("open", "") }
+      function closeDlg(d) { if (d.close) d.close(); else d.removeAttribute("open") }
+      function burst(n) {
+        if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var cols = ["#E23B4E", "#FFC83D", "#F59AB8", "#2E9E6B", "#2A1A1F"];
+        for (var i = 0; i < n; i++) { var c = el("div", "conf"); c.style.left = Math.random() * 100 + "vw"; c.style.background = cols[i % 5]; c.style.animationDuration = (2 + Math.random() * 2) + "s"; c.style.animationDelay = Math.random() * .6 + "s"; document.body.appendChild(c); setTimeout(function (x) { x.remove() }, 5000, c); }
+      }
+      $("#starCount").onclick = function () { openDlg($("#hatDlg")) };
+      $("#hatClose").onclick = function () { closeDlg($("#hatDlg")) };
+      $("#doneClose").onclick = function () { closeDlg($("#doneDlg")) };
+      $("#doneCard").onclick = function () { closeDlg($("#doneDlg")) };
+
+      /* barra de progresso de rolagem + menu ativo */
+      var bar = $("#progress");
+      function onScroll() { var h = document.documentElement; var m = h.scrollHeight - h.clientHeight; bar.style.width = (m > 0 ? h.scrollTop / m * 100 : 0) + "%"; }
+      window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+      var links = {}; $$(".menu a").forEach(function (a) { links[a.dataset.s] = a });
+      var secs = ["inicio", "etapa1", "etapa2", "etapa3", "etapa4", "etapa5", "fechamento", "cartao"].map(function (id) { return document.getElementById(id) });
+      function setActive() {
+        var y = window.scrollY + 120, cur = "inicio";
+        secs.forEach(function (s) { if (s && s.offsetTop <= y) cur = s.id });
+        Object.keys(links).forEach(function (k) { links[k].classList.toggle("on", k === cur) });
+        var a = links[cur]; if (a && a.scrollIntoView && a.parentNode.scrollWidth > a.parentNode.clientWidth) { a.parentNode.scrollLeft = a.offsetLeft - 60; }
+      }
+      window.addEventListener("scroll", setActive, { passive: true }); setActive();
+
+      /* flip cards */
+      $$(".flip").forEach(function (b) { b.onclick = function () { b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true") } });
+
+      /* demo fonética */
+      var STEPS = [
+        ["Você está com fome, não é?", "Frase da escrita formal."],
+        ["Cê está com fome, não é?", "Corte no começo: você → cê (aférese)."],
+        ["Cê tá com fome, não é?", "Corte no começo: está → tá (aférese)."],
+        ["Cê tá com fome, né?", "Junção: não é → né. Agora é a fala do dia a dia!"]
+      ];
+      var tm = [];
+      function play() {
+        tm.forEach(clearTimeout); tm = [];
+        STEPS.forEach(function (s, k) { tm.push(setTimeout(function () { $("#typed").textContent = s[0]; $("#demoNote").textContent = s[1]; }, k * 1500)); });
+      }
+      $("#replay").onclick = play;
+      var played = false;
+      if ("IntersectionObserver" in window) { new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting && !played) { played = true; play(); o.disconnect(); } }) }, { threshold: .5 }).observe($(".demo")); }
+
+      /* inputs salvos */
+      $$("[data-save]").forEach(function (i) {
+        var k = i.dataset.save;
+        if (i.type === "checkbox") { i.checked = !!S.save[k]; i.onchange = function () { S.save[k] = i.checked; persist(); }; }
+        else { i.value = S.save[k] || ""; i.oninput = function () { S.save[k] = i.value; persist(); }; }
+      });
+
+      /* carrossel */
+      var FR = [["Julia", "A língua é viva: muda com o lugar, o grupo, o tempo e a situação."], ["Luiza", "Ninguém fala errado: o que existe é a fala adequada a cada ocasião."], ["Julia", "Gíria dá identidade ao grupo; jargão dá precisão à profissão."], ["Luiza", "Sem filtro é fala espontânea, e respeito nunca sai de moda."], ["Julia", "Cada som cortado ou juntado conta uma história de identidade."]];
+      var ci = 0; function showC() { $("#cWho").textContent = FR[ci][0]; $("#cTxt").textContent = FR[ci][1]; }
+      $("#cPrev").onclick = function () { ci = (ci + FR.length - 1) % FR.length; showC(); };
+      $("#cNext").onclick = function () { ci = (ci + 1) % FR.length; showC(); }; showC();
+
+      /* cartão de bolso */
+      var CARD = ["1. Sociolinguística: língua e sociedade andam juntas.", "2. Variação: regional, social, histórica, situacional.", "3. Ninguém fala “errado”: fale de modo adequado.", "4. Gíria: vocabulário criativo do grupo.", "5. Jargão: vocabulário técnico da área.", "6. Gíria nasce, circula, cansa e se renova.", "7. GSF: fala espontânea, mas com respeito.", "8. Fonética: cortar e juntar sons cria gírias.", "9. Gíria = identidade e pertencimento."];
+      function wrap(ctx, t, x, y, w, lh) { var words = t.split(" "), line = ""; words.forEach(function (wd) { var test = line + wd + " "; if (ctx.measureText(test).width > w && line) { ctx.fillText(line, x, y); line = wd + " "; y += lh; } else line = test; }); ctx.fillText(line, x, y); return y + lh; }
+      $("#dlCard").onclick = function () {
+        var c = document.createElement("canvas"); c.width = 900; c.height = 1250; var x = c.getContext("2d");
+        x.fillStyle = "#FFF3C9"; x.fillRect(0, 0, 900, 1250); x.strokeStyle = "#2A1A1F"; x.lineWidth = 12; x.strokeRect(20, 20, 860, 1210);
+        x.fillStyle = "#B92438"; x.font = "bold 30px sans-serif"; x.fillText("CARTÃO DE BOLSO · OFICINA 8º ANO", 60, 100);
+        x.fillStyle = "#2A1A1F"; x.font = "bold 72px sans-serif"; x.fillText("A língua é viva!", 60, 200);
+        x.font = "bold 36px sans-serif"; var y = 290; CARD.forEach(function (t) { y = wrap(x, t, 60, y, 780, 48) + 20; });
+        x.fillStyle = "#E23B4E"; x.font = "bold 28px sans-serif"; x.fillText("Oficina 8º Ano", 60, 1180);
+        var a = document.createElement("a"); a.download = "cartao-de-bolso-gsf.png"; a.href = c.toDataURL("image/png"); document.body.appendChild(a); a.click(); a.remove();
+      };
+      $("#prCard").onclick = function () { document.body.classList.add("printing"); window.print(); setTimeout(function () { document.body.classList.remove("printing") }, 500); };
+
+      /* apagar progresso */
+      $("#resetBtn").onclick = function () {
+        if (confirm("Apagar todas as estrelas e respostas salvas neste aparelho?")) { try { localStorage.removeItem(KEY); } catch (e) { } location.reload(); }
+      };
+
+      refresh(false);
+    })();
+  </script>
+</body>
+
+</html>
